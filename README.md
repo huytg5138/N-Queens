@@ -3,10 +3,15 @@
 Giải bài toán **N-Queens (N Quân Hậu)** bằng hai thuật toán tìm kiếm cục bộ:  
 **Hill Climbing** và **Simulated Annealing**
 
-> 📚 Môn học: Trí Tuệ Nhân Tạo  
-
----
-
+> 📚 Môn học: Trí Tuệ Nhân Tạo
+> Đề tài 21: Giải câu đố N-Queens bằng thuật toán leo núi (Hill Climbing) và Tôi luyện giả lập (Simulated Annealing)
+> Danh sách thành viên:
+ Trịnh Gia Huy - 232661
+ Dương Phước Duy - 232831
+ Phạm Thành Luân - 232897
+ Nguyễn Vĩnh Phước - 232913
+ Phạm Quốc Huy - 232848
+ Nguyễn Chí Công - 232685
 ## 🧩 Bài toán N-Queens
 
 Đặt **N quân hậu** trên bàn cờ **N×N** sao cho **không có 2 quân nào tấn công nhau** (không cùng hàng, cột, hoặc đường chéo).
