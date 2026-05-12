@@ -6,7 +6,7 @@ class NQueensSolver:
     def __init__(self, n):
         self.n = n
 
-    def initial_board(self):
+    def initial_board(self): 
         """Khởi tạo bàn cờ ngẫu nhiên.
         Mảng 1 chiều: index là cột, giá trị là hàng của quân hậu."""
         return [random.randint(0, self.n - 1) for _ in range(self.n)]
@@ -87,9 +87,9 @@ class NQueensSolver:
 
             restarts += 1
 
-    # ================= 2. THUẬT TOÁN SIMULATED ANNEALING =================
+   # ================= 2. THUẬT TOÁN SIMULATED ANNEALING =================
 
-    def simulated_annealing(self, start_board=None, initial_temp=None, cooling_rate=0.995):
+    def simulated_annealing(self, start_board=None, initial_temp=None, cooling_rate=None):
         """Thuật toán Tôi luyện giả lập.
         Tự động điều chỉnh nhiệt độ ban đầu theo kích thước N.
         Trả về: (board, conflicts, steps)"""
@@ -98,11 +98,15 @@ class NQueensSolver:
 
         # Tự động chỉnh nhiệt độ theo N nếu không truyền vào
         if initial_temp is None:
-            initial_temp = self.n * 10.0
+            initial_temp = self.n * self.n * 2.0
 
         temperature = initial_temp
-        # Giới hạn số bước tối đa để tránh chạy vô tận
-        max_steps = int(initial_temp * self.n * 5)
+        max_steps = int(initial_temp * self.n * 20)
+
+        # Tự động tính cooling_rate sao cho nhiệt độ nguội vừa đủ trong max_steps bước
+        if cooling_rate is None:
+            cooling_rate = (0.01 / initial_temp) ** (1.0 / max_steps)
+
         steps = 0
 
         while temperature > 0.01 and current_conflicts > 0 and steps < max_steps:
@@ -127,7 +131,6 @@ class NQueensSolver:
             steps += 1
 
         return current_board, current_conflicts, steps
-
     # ================= 3. BENCHMARK SO SÁNH =================
 
     def benchmark(self, runs=30):
