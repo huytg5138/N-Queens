@@ -70,31 +70,24 @@ N = 8  # Thay đổi N tại đây: 8, 16, 32...
 ==================================================
   BÀI TOÁN 8-QUEENS
 ==================================================
-
 [1] Random-Restart Hill Climbing
     -> Kết quả       : THÀNH CÔNG ✓
     -> Số lỗi còn lại: 0
-    -> Tổng bước đi  : 12
+    -> Tổng bước đi  : 11
     -> Số lần restart: 3
-    -> Thời gian     : 0.0021 giây
+    -> Thời gian     : 0.0024 giây
 
 [2] Simulated Annealing
     -> Kết quả       : THÀNH CÔNG ✓
     -> Số lỗi còn lại: 0
-    -> Số vòng lặp   : 1847
-    -> Thời gian     : 0.0134 giây
+    -> Số vòng lặp   : 11738
+    -> Thời gian     : 0.0488 giây
 
-==================================================
   BENCHMARK: 30 lần chạy cho 8-Queens
-==================================================
-  Thuật toán                        HC       SA
-  ----------------------------------------------
-  Tỉ lệ thành công (%):          43.3%    86.7%
-  Số bước TB:                      8.2    523.1
-  Số lần thành công:             13/30    26/30
-```
-
----
+  Thuật toán                     HC       SA
+  Tỉ lệ thành công (%):       26.7%   100.0%
+  Số bước TB:                   3.3  11427.3
+  Số lần thành công:           8/30    30/30
 
 ## 🗂️ Cấu trúc chương trình
 
@@ -125,7 +118,7 @@ n_queens_solver.py
 |---|---|---|
 | Tốc độ mỗi bước | Nhanh | Chậm hơn |
 | Dễ bị local optimum | Có | Ít hơn |
-| Tỉ lệ thành công (N=8) | ~40% | ~85% |
+| Tỉ lệ thành công (N=8) | ~26% | ~100% |
 | Cần Random Restart | Có | Không bắt buộc |
 
 > **Kết luận:** SA vượt trội hơn HC thuần túy về tỉ lệ thành công nhờ khả năng thoát khỏi local optimum. HC cần kết hợp Random Restart mới đảm bảo tìm ra nghiệm.
